@@ -1,18 +1,20 @@
+#importing the tkinter module
+
 from tkinter import*
 
-def btnClick(numbers):
+def btnClick(numbers):    
     global operator
     operator=operator + str(numbers)
     text_input.set(operator)
 
 
-def btnClearDisplay():
+def btnClearDisplay():     #for clearing the display
     global operator
     operator=""
     text_input.set("")
 
 
-def btnEqualsInput():
+def btnEqualsInput():    
     global operator
     sumup=str(eval(operator))
     text_input.set(sumup)
@@ -27,6 +29,7 @@ text_input=StringVar()
 txtDisplay = Entry(cal,font=('arial', 20,'bold'), textvariable=text_input, bd=30, insertwidth=4,
                    bg="yellow", justify='right').grid(columnspan=4)
 
+#adding buttons according to the row
 
 btn7=Button(cal,padx=16,bd=8 ,fg="black",font=('arial', 20,'bold'),
             text="7",bg="powder blue",command=lambda:btnClick(7)).grid(row=1,column=0)
